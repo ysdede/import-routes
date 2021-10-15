@@ -7,8 +7,9 @@ try:
     from jesse.routes import router
     from jesse.services import db
     config['app']['trading_mode'] = 'import-candles'
-except:
-    print('Check your routes.py file!')
+except Exception as e:
+    print(e)
+    print('Check your routes.py file or database settings in config.py')
     exit()
 
 # If no start date is specified, the system will default to two days earlier.
